@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<style>
+		table, td {
+		  border: 1px solid black;
+		}
+		</style>
+    <meta charset="UTF-8">
+	<script> 
+		function InsertRowFunction(id){
+        let tbody = document.getElementById('Table').getElementsByTagName("tbody")[0];
+        let row = document.createElement("tr")
+        let td1 = document.createElement("td")
+        td1.appendChild(document.createTextNode("4"))
+        let td2 = document.createElement("td")
+        td2.appendChild (document.createTextNode("Заголовок 4"))
+        let td3 = document.createElement("td")
+        td3.appendChild(document.createTextNode("Описание 4"))
+        let td4 = document.createElement("td")
+		let td5 = document.createElement("a")
+		td5.href = "#";
+	
+		td5.appendChild(document.createTextNode('Удалить'));
+		td5.onclick = function () { DeliteRowFunction(this);}
+		
+		td4.appendChild(td5);
+        row.appendChild(td1);
+        row.appendChild(td2);
+        row.appendChild(td3);
+        row.appendChild(td4);
+
+        tbody.appendChild(row);
+      }
+	
+	   
+	  </script>
+    <title>Document</title>
+</head>
+<body>
+    
+    <script src="file.js"></script>
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Поиск">
+	
+<table id="Table">
+  <thead>
+	<tr>
+		<td>Номер записи</td>
+		<td>Название</td>
+		<td>Описание</td>
+		<td>Действия</td>
+	</tr>
+  </thead>
+  <tbody id="Tbody">
+	<tr id="tr">
+		<td>1</td>
+		<td>Заголовок 1</td>
+		<td>Описание 1</td>
+		<td><a  href="#" onclick="DeliteRowFunction(this);return false;">Удалить</a></td>
+	</td>
+	<tr>
+		<td>2</td>
+		<td>Заголовок 2</td>
+		<td>Описание 2</td>
+		<td><a  href="#"  onclick="DeliteRowFunction(this);return false;">Удалить</a></td>
+	</td>
+	<tr>
+	    <td>3</td>
+		<td>Заголовок 3</td>
+		<td>Описание 3</td>
+		<td><a  href="#" onclick="DeliteRowFunction(this);return false;">Удалить</a></td>
+	</td>
+  </tbody>
+</table>
+<button type = "button" onclick="InsertRowFunction('Table');return false;">Добавить элемент</button>
+</body>
+</html>
